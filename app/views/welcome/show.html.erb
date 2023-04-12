@@ -1,0 +1,16 @@
+<H1>HelpList</H1>
+
+<%= form_with url: "/login", method: :get do |form| %>
+  <%= form.label :email, "Email:"%>
+  <%= form.text_field :email %>
+  <%= form.label :password, "Password:" %>
+  <%= form.password_field :password %>
+  <%= form.submit "Login" %> 
+<% end %>
+<%= button_to "Login with Google"  %>
+# add path to login with google
+<%= link_to "Create an account" %>
+# add path to create account
+
+<%= link_to  "Do you or someone you know need help?" %>
+# add path to google maps
