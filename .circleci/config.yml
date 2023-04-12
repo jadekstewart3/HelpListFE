@@ -1,0 +1,30 @@
+version: 2.1
+# Orbs are reusable packages of CircleCI configuration that you may share across projects, enabling you to create encapsulated, parameterized commands, jobs, and executors that can be used across multiple projects.
+# See: https://circleci.com/docs/2.0/orb-intro/
+orbs:
+  ruby: circleci/ruby@1.4.0
+# Define a job to be invoked later in a workflow.
+# See: https://circleci.com/docs/2.0/configuration-reference/#jobs
+jobs:
+  build:
+    working_directory: ~/HelpListFE
+    docker:
+      - image: cimg/ruby:3.1.1
+        environment:
+          PGHOST: localhost
+          PGUSER: HelpListFE
+          RAILS_ENV: test
+      - image: postgres:13.2
+        environment:
+          POSTGRES_USER: HelpListFE
+          POSTGRES_DB: HelpListFE_test
+          POSTGRES_PASSWORD:
+    executor: ruby/default
+    steps:
+      - checkout
+      - run:
+          name: HelpListFE
+          command: bundle -v
+      - checkout
+      - run: bundle install --path vendor/bundle
+      - run: bundle exec rspec
