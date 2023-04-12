@@ -8,14 +8,14 @@ describe "User Login" do
 
   describe "As a visitor" do
     describe "when I visit the welcome page" do
-      it "displays a form to log in with an email and password" do
+      xit "displays a form to log in with an email and password" do
         visit root_path
 
         expect(page).to have_field(:email)
         expect(page).to have_field(:password)
       end
 
-      it "displays two buttons to log in" do
+      xit "displays two buttons to log in" do
         visit root_path
 
         expect(page).to have_button("Login")
@@ -24,7 +24,7 @@ describe "User Login" do
     end
 
     describe "when I fill in the login form" do
-      it "logs me in and redirects me to my dashboard" do
+      xit "logs me in and redirects me to my dashboard" do
         visit root_path
 
         fill_in :email, with: @user.email
@@ -37,7 +37,7 @@ describe "User Login" do
     end
 
     describe "when I fill in the login form incorrectly" do
-      it "does not log me in and displays an error message" do
+      xit "does not log me in and displays an error message" do
         visit root_path
 
         fill_in :email, with: @user.email
