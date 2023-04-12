@@ -17,7 +17,7 @@ RSpec.describe "Welcome Page" do
       end
 
       it "displays a link to register a new user" do
-        expect(page).to have_link("Create an account")
+        expect(page).to have_link("Register Here")
       end
 
       it "displays two buttons to log in" do
