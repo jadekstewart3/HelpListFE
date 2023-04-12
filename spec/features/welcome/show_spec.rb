@@ -28,6 +28,13 @@ RSpec.describe "Welcome Page" do
       it "displays a link to search for organizations near me" do
         expect(page).to have_link("Do you or someone you know need help?")
       end
+
+      it "has a nav bar with link for the home, dashboard, and wishlist" do
+    
+        expect(page).to have_link("Home")
+        expect(page).to have_link("Dashboard")
+        expect(page).to have_link("Wishlist")
+      end
     end
   end
 end
