@@ -7,9 +7,9 @@
   <%= form.password_field :password %>
   <%= form.submit "Login" %> 
 <% end %>
-<%= button_to "Login with Google"  %>
+<%= button_to "Login with Google", "/auth/google_oauth2"  %>
 # add path to login with google
-<%= link_to "Create an account" %>
+<%= link_to "Create an account", "/register" %>
 # add path to create account
 
 <%= link_to  "Do you or someone you know need help?" %>
