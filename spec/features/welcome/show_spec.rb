@@ -8,6 +8,7 @@ RSpec.describe "Welcome Page" do
     describe "when I visit the welcome page" do 
       it "displays the name of the application at the top of the page" do
         expect(page).to have_content("HelpList")
+        expect(page).to have_content("Helping Humans Help Humans")
       end
       
       it "displays a form to log in with an email and password" do
