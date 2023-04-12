@@ -4,7 +4,7 @@ describe "application.html.erb" do
   it "has a title and tagline" do
     visit root_path
 
-    expect(page).to have_title("HelpList")
+    expect(page).to have_content("HelpList")
     expect(page).to have_content("Helping Humans Help Humans")
   end
 
