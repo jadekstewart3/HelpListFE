@@ -7,7 +7,7 @@ RSpec.describe "Welcome Page" do
   describe "As a visitor" do 
     describe "when I visit the welcome page" do 
       it "displays the name of the application at the top of the page" do
-        expect(page).to have_content("HelpList")
+        expect(page).to have_title("HelpList")
         expect(page).to have_content("Helping Humans Help Humans")
       end
       
@@ -27,6 +27,13 @@ RSpec.describe "Welcome Page" do
 
       it "displays a link to search for organizations near me" do
         expect(page).to have_link("Do you or someone you know need help?")
+      end
+
+      it "has a nav bar with link for the home, dashboard, and wishlist" do
+    
+        expect(page).to have_link("Home")
+        expect(page).to have_link("Dashboard")
+        expect(page).to have_link("Wishlist")
       end
     end
   end
