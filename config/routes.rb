@@ -4,8 +4,6 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   root "welcome#show"
-<<<<<<< Updated upstream
-=======
 
   get "/register", controller: "users", to: "users#new"
   get "/register", controller: "users", to: "users#create"
@@ -17,5 +15,4 @@ Rails.application.routes.draw do
 
   get '/login', to: "users#login_form"
   post '/login', to: "users#login_user"
->>>>>>> Stashed changes
 end

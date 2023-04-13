@@ -3,7 +3,6 @@ require "rails_helper"
 describe "User Login" do
   before :each do
     @user = create(:user)
-    # @user = User.create!(first_name: "Bob", last_name: "Bobberson", email: "bobbo@myemail.com", password: "password")
   end
 
   describe "As a visitor" do
@@ -32,7 +31,7 @@ describe "User Login" do
         click_button "Login"
 
         expect(current_path).to eq(dashboard_path)
-        expect(page).to have_content("Welcome back, " + @user.first_name)
+        expect(page).to have_content("Welcome back, " + @user.email)
       end
     end
 
